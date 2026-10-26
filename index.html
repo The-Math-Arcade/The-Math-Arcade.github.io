@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e8">
+  <title>Math Arcade</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Math Arcade home">
+      <span class="brand-mark" aria-hidden="true">π</span>
+      <span>Math Arcade</span>
+    </a>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a class="active" href="index.html" data-i18n="navHome">Home</a>
+      <a href="pages/algebra-1.html" data-i18n="navAlgebra1">Algebra I</a>
+      <a href="pages/algebra-2.html" data-i18n="navAlgebra2">Algebra II</a>
+    </nav>
+    <div class="header-actions">
+      <label class="language-picker">
+        <span data-i18n="language">Language</span>
+        <select id="language-select" aria-label="Language">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+        </select>
+      </label>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+        <span aria-hidden="true">☾</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="heroEyebrow">Practice that feels possible</p>
+        <h1 id="hero-title" data-i18n="heroTitle">Make algebra<br>click.</h1>
+        <p class="hero-summary" data-i18n="heroSummary">Fresh problems, visual steps, and instant feedback for the math you meet in class.</p>
+        <a class="primary-button" href="pages/algebra-1.html">
+          <span data-i18n="startPractice">Start practicing</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="hero-visual" aria-label="Coordinate plane illustration">
+        <svg viewBox="0 0 560 520" role="img" aria-labelledby="graph-title">
+          <title id="graph-title">Quadratic graph with coordinate points</title>
+          <g class="grid-lines">
+            <path d="M40 70H520M40 140H520M40 210H520M40 280H520M40 350H520M40 420H520M40 490H520" />
+            <path d="M80 30V500M155 30V500M230 30V500M305 30V500M380 30V500M455 30V500" />
+          </g>
+          <path class="axis" d="M40 280H520M305 30V500" />
+          <path class="curve-shadow" d="M80 430C150 120 200 70 305 70C410 70 460 120 530 430" />
+          <path class="curve" d="M80 430C150 120 200 70 305 70C410 70 460 120 530 430" />
+          <g class="plot-point"><circle cx="305" cy="70" r="12" /><circle cx="305" cy="70" r="5" /></g>
+          <g class="plot-point"><circle cx="230" cy="120" r="12" /><circle cx="230" cy="120" r="5" /></g>
+          <g class="plot-point"><circle cx="380" cy="120" r="12" /><circle cx="380" cy="120" r="5" /></g>
+          <text x="322" y="57">vertex</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="course-section" aria-labelledby="courses-title">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="chooseCourse">Choose a course</p>
+        <h2 id="courses-title" data-i18n="courseTitle">Build the skill. Keep the streak.</h2>
+      </div>
+      <div class="course-grid">
+        <a class="course-card algebra-one" href="pages/algebra-1.html">
+          <span class="course-number">01</span>
+          <div class="course-art linear-art" aria-hidden="true">
+            <span class="line"></span><i></i><i></i><i></i>
+          </div>
+          <div class="course-content">
+            <p data-i18n="course1Label">Algebra I</p>
+            <h3 data-i18n="course1Title">Linear equations<br>& proportions</h3>
+            <span class="course-link" data-i18n="explore">Explore track <b aria-hidden="true">→</b></span>
+          </div>
+        </a>
+        <a class="course-card algebra-two" href="pages/algebra-2.html">
+          <span class="course-number">02</span>
+          <div class="course-art parabola-art" aria-hidden="true">
+            <span></span><i></i><i></i><i></i>
+          </div>
+          <div class="course-content">
+            <p data-i18n="course2Label">Algebra II</p>
+            <h3 data-i18n="course2Title">Quadratics<br>& functions</h3>
+            <span class="course-link" data-i18n="explore">Explore track <b aria-hidden="true">→</b></span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <button class="calculator-toggle" id="calculator-toggle" type="button" aria-expanded="false" aria-controls="calculator">
+    <span aria-hidden="true">#</span><span data-i18n="calculator">Calculator</span>
+  </button>
+  <aside class="calculator" id="calculator" aria-label="Calculator">
+    <div class="calculator-header">
+      <strong data-i18n="calculator">Calculator</strong>
+      <button id="calculator-close" type="button" aria-label="Close calculator">×</button>
+    </div>
+    <output id="calc-display" aria-live="polite">0</output>
+    <div class="calculator-grid" id="calc-grid"></div>
+  </aside>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

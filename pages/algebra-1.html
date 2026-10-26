@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Algebra I Practice | Math Arcade</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">π</span><span>Math Arcade</span></a>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="../index.html" data-i18n="navHome">Home</a><a class="active" href="algebra-1.html" data-i18n="navAlgebra1">Algebra I</a><a href="algebra-2.html" data-i18n="navAlgebra2">Algebra II</a>
+    </nav>
+    <div class="header-actions">
+      <label class="language-picker"><span data-i18n="language">Language</span><select id="language-select" aria-label="Language"><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option></select></label>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span aria-hidden="true">☾</span></button>
+    </div>
+  </header>
+
+  <main class="practice-page">
+    <aside class="practice-aside">
+      <p class="eyebrow" data-i18n="course1Label">Algebra I</p>
+      <h1 data-i18n="course1Title">Linear equations &amp; proportions</h1>
+      <div class="topic-list" role="tablist" aria-label="Problem topics">
+        <button class="topic-button active" type="button" role="tab" aria-selected="true" data-topic="solveX"><span>01</span><span data-i18n="topicSolveX">Solve for x</span></button>
+        <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="proportion"><span>02</span><span data-i18n="topicProportion">Proportions</span></button>
+        <button class="topic-button" type="button" role="tab" aria-selected="false" data-topic="systems"><span>03</span><span data-i18n="topicSystems">Systems</span></button>
+      </div>
+      <div class="progress-card"><div><span data-i18n="sessionProgress">Session progress</span><strong id="progress-count">0 / 5</strong></div><div class="progress-track"><span id="progress-bar"></span></div></div>
+    </aside>
+
+    <section class="practice-workspace" aria-live="polite">
+      <div class="problem-toolbar"><span id="problem-label">Practice 01</span><button id="new-problem" type="button" data-i18n="newProblem">New problem ↻</button></div>
+      <div class="problem-stage"><span class="problem-kicker" data-i18n="findValue">Find the value</span><p class="problem-equation" id="problem-equation">3x + 4 = 19</p></div>
+      <form class="answer-form" id="answer-form">
+        <label for="answer-input" data-i18n="yourAnswer">Your answer</label>
+        <div><input id="answer-input" name="answer" type="text" inputmode="decimal" autocomplete="off" placeholder="x = ?"><button type="submit" data-i18n="checkAnswer">Check answer</button></div>
+        <p class="answer-feedback" id="answer-feedback"></p>
+      </form>
+      <details class="solution" id="solution"><summary data-i18n="showSteps">Show worked steps</summary><ol id="solution-steps"></ol></details>
+    </section>
+  </main>
+
+  <button class="calculator-toggle" id="calculator-toggle" type="button" aria-expanded="false" aria-controls="calculator"><span aria-hidden="true">#</span><span data-i18n="calculator">Calculator</span></button>
+  <aside class="calculator" id="calculator" aria-label="Calculator"><div class="calculator-header"><strong data-i18n="calculator">Calculator</strong><button id="calculator-close" type="button" aria-label="Close calculator">×</button></div><output id="calc-display">0</output><div class="calculator-grid" id="calc-grid"></div></aside>
+  <script src="../assets/problems.js"></script><script src="../assets/app.js"></script>
+</body>
+</html>
